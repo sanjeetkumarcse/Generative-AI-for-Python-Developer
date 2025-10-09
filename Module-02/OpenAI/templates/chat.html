@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Azure OpenAI Chat Agent</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background: #f9f9f9; }
+    #chat-box { width: 80%; margin: auto; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px #ccc; }
+    .message { margin: 10px 0; }
+    .user { color: blue; }
+    .bot { color: green; }
+    .error { color: red; font-weight: bold; }
+    .usage { font-size: 0.9em; color: gray; margin-left: 10px; }
+    #token-usage { margin-top: 20px; font-weight: bold; }
+    input { width: 65%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { padding: 10px 15px; border: none; background: #0078d7; color: white; border-radius: 5px; margin-left: 5px; }
+  </style>
+</head>
+<body>
+  <div id="chat-box">
+    <h2>Azure OpenAI Chat Agent</h2>
+    <div id="messages"></div>
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="resetChat()">Reset Chat</button>
+    <div id="token-usage">Total tokens used: 0</div>
+  </div>
+
+  <script>
+  let history = [];
+  let totalTokens = 0;
+
+  async function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    addMessage("You: " + message, "user");
+    input.value = "";
+
+    // Show processing indicator
+    const processingDiv = addMessage("Agent is typing...", "bot", true);
+
+    try {
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, history })
+      });
+
+      const data = await response.json();
+
+      // Remove processing indicator
+      processingDiv.remove();
+
+      if (!response.ok) {
+        addMessage("Error: " + data.reply, "error");
+        return;
+      }
+
+      // Show bot reply with per-message token usage
+      let botText = `Agent: ${data.reply}`;
+      if (data.usage && Object.keys(data.usage).length) {
+        botText += ` (Tokens: Prompt=${data.usage.prompt_tokens}, Completion=${data.usage.completion_tokens}, Total=${data.usage.total_tokens})`;
+        totalTokens += data.usage.total_tokens || 0;
+      }
+
+      addMessage(botText, "bot");
+
+      // Update conversation history
+      history.push({ role: "user", content: message });
+      history.push({ role: "assistant", content: data.reply });
+
+      // Update total tokens display
+      document.getElementById("token-usage").textContent =
+        `Total tokens used: ${totalTokens}`;
+
+    } catch (err) {
+      // Remove processing indicator
+      processingDiv.remove();
+      addMessage("Error: " + err.message, "error");
+    }
+  }
+
+  function addMessage(text, role, processing=false) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "message " + role;
+    msgDiv.textContent = text;
+    if (processing) msgDiv.id = "processing";  // mark as processing
+    document.getElementById("messages").appendChild(msgDiv);
+    msgDiv.scrollIntoView({ behavior: "smooth" });
+    return msgDiv;  // return the element to remove later
+  }
+
+  function resetChat() {
+    history = [];
+    totalTokens = 0;
+    document.getElementById("messages").innerHTML = "";
+    document.getElementById("token-usage").textContent = "Total tokens used: 0";
+  }
+</script>
+
+    
+</body>
+</html>
