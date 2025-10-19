@@ -14,7 +14,7 @@
 
 | # | Title | Link | Difficulty | Notes |
 |---|-------|------|------------|-------|
-| 1 | Simple explanation of convolutional neural network | [https://www.youtube.com/watch?v=zfiSAzpy9NM](https://www.youtube.com/watch?v=zfiSAzpy9NM) | Beginner | A gentle intro to CNNs — minimal math, good for absolute beginners. :contentReference[oaicite:1]{index=1} |
+| 1 | Simple explanation of convolutional neural network | [https://www.youtube.com/watch?v=zfiSAzpy9NM](https://www.youtube.com/watch?v=zfiSAzpy9NM) | Beginner | A gentle intro to CNNs — minimal math, good for absolute beginners. |
 | 2 | Convolutional Neural Networks (Course 4 of the Deep Learning Specialization) | [https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF) | Intermediate/Advanced | Playlist form, academic depth. |
 | 3 | What is Recurrent Neural Network (RNN)? Deep Learning Tutorial | [https://www.youtube.com/watch?v=Y2wfIKQyd1I](https://www.youtube.com/watch?v=Y2wfIKQyd1I) | Beginner | Intro to RNNs, sequence modelling. |
 | 4 | Recurrent Neural Networks (RNNs), Clearly Explained!!! | [https://www.youtube.com/watch?v=AsNTP8Kwu80](https://www.youtube.com/watch?v=AsNTP8Kwu80) | Beginner/Intermediate | Covers RNNs and the vanishing/exploding gradient issue. |
