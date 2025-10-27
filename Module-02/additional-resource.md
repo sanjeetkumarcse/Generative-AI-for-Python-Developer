@@ -7,7 +7,7 @@
 | Convolutional Neural Network (CNN): A Complete Guide | <a href="https://learnopencv.com/understanding-convolutional-neural-networks-cnn/" target="_blank">LearnOpenCV Article</a> |
 | Deep Learning Course (GitHub) | <a href="https://github.com/MatchLab-Imperial/deep-learning-course" target="_blank">GitHub Repository</a> |
 | Machine Learning Course (GitHub) | <a href="https://github.com/MatchLab-Imperial/machine-learning-course" target="_blank">GitHub Repository</a> |
-
+|CNN Explainer|<a href="https://poloclub.github.io/cnn-explainer/" target="_blank">CNN Explainer</a> |
 
 
 # YouTube Resources for CNN & RNN
