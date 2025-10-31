@@ -1,0 +1,12 @@
+# Core PyTorch & Transformers
+torch>=2.1.0
+transformers>=4.45.0
+datasets>=2.14.0
+peft>=0.5.0
+
+# FastAPI for API server
+fastapi>=0.103.0
+uvicorn>=0.24.0
+
+# Optional utilities
+sentencepiece>=0.1.99   # needed for some T5 models

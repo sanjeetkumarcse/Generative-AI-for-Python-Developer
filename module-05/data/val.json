@@ -1,0 +1,22 @@
+[
+  {"input_text": "Translate to French: I am lost", "target_text": "Je suis perdu"},
+  {"input_text": "Translate to French: I am late", "target_text": "Je suis en retard"},
+  {"input_text": "Translate to French: I am free", "target_text": "Je suis libre"},
+  {"input_text": "Translate to French: I am happy", "target_text": "Je suis heureux"},
+  {"input_text": "Translate to French: I am sad", "target_text": "Je suis triste"},
+  {"input_text": "Translate to French: I am angry", "target_text": "Je suis en colère"},
+  {"input_text": "Translate to French: I am excited", "target_text": "Je suis excité"},
+  {"input_text": "Translate to French: I am scared", "target_text": "J'ai peur"},
+  {"input_text": "Translate to French: I am bored", "target_text": "Je m'ennuie"},
+  {"input_text": "Translate to French: I am confused", "target_text": "Je suis confus"},
+  {"input_text": "Translate to French: I am at home", "target_text": "Je suis à la maison"},
+  {"input_text": "Translate to French: I am at school", "target_text": "Je suis à l'école"},
+  {"input_text": "Translate to French: I am at work", "target_text": "Je suis au travail"},
+  {"input_text": "Translate to French: I am at the airport", "target_text": "Je suis à l'aéroport"},
+  {"input_text": "Translate to French: I am at the restaurant", "target_text": "Je suis au restaurant"},
+  {"input_text": "Translate to French: I am at the park", "target_text": "Je suis au parc"},
+  {"input_text": "Translate to French: I am at the store", "target_text": "Je suis au magasin"},
+  {"input_text": "Translate to French: I am at the cinema", "target_text": "Je suis au cinéma"},
+  {"input_text": "Translate to French: I am at the beach", "target_text": "Je suis à la plage"},
+  {"input_text": "Translate to French: I am at the mountain", "target_text": "Je suis à la montagne"}
+]
