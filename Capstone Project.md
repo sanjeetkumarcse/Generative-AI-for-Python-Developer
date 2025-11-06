@@ -1,4 +1,4 @@
-# Captsone Project
+# Capstone project
 
 ---
 
