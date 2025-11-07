@@ -1,0 +1,5 @@
+flask
+langchain
+openai
+prometheus_client
+python-dotenv

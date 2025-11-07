@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure GPT-4o Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; }
+    .chat-box { border: 1px solid #ccc; padding: 15px; height: 400px; overflow-y: auto; margin-bottom: 10px; }
+    .msg { margin-bottom: 10px; }
+    .user { font-weight: bold; color: #0078d4; }
+    .ai { font-weight: bold; color: #2d9d78; }
+  </style>
+</head>
+<body>
+  <h2>💬 Azure GPT-4o Chat (Flask + LangChain)</h2>
+  <div class="chat-box" id="chatBox"></div>
+  <input type="text" id="messageInput" placeholder="Type a message..." style="width: 80%;">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("messageInput");
+      const chatBox = document.getElementById("chatBox");
+      const message = input.value.trim();
+      if (!message) return;
+
+      chatBox.innerHTML += `<div class="msg"><span class="user">You:</span> ${message}</div>`;
+      input.value = "";
+
+      const response = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      });
+      const data = await response.json();
+      chatBox.innerHTML += `<div class="msg"><span class="ai">AI:</span> ${data.response}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

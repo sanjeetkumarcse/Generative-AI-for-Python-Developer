@@ -1,0 +1,7 @@
+flask
+langchain
+langchain-openai
+python-dotenv
+azure-identity
+langchain_classic
+gunicorn

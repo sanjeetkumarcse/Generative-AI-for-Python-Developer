@@ -1,4 +1,3 @@
-# run using command uvicorn books:app
 from fastapi import Body, FastAPI
 
 app = FastAPI()
